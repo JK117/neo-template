@@ -6,6 +6,5 @@
 </p>
 
 ## About
-***
 Neo Template is a personal project template currently applies Vite + Vue3 + Ts + Element-plus
 
