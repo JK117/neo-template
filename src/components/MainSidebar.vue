@@ -3,7 +3,7 @@ import SidebarHeader from './sidebar/SidebarHeader.vue'
 </script>
 
 <template>
-    <el-aside class="sidebar-container">
+    <el-aside class="sidebar-container" >
         <SidebarHeader />
         <el-container>
             Index List
@@ -16,7 +16,6 @@ import SidebarHeader from './sidebar/SidebarHeader.vue'
 
 <style scoped>
 .sidebar-container {
-    border-right-width: 1px !important;
-    border-right-color: aqua !important;
+    border-right: 1px solid aqua;
 }
 </style>
