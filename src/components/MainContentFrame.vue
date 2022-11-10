@@ -1,6 +1,8 @@
 <template>
-    <el-main class="content-container">
-        MainContentFrame
+    <el-main>
+        <div class="content-container">
+            <h1>Main Content Section</h1>
+        </div>
     </el-main>
 </template>
 
@@ -8,6 +10,10 @@
 
 <style scoped>
 .content-container {
-    justify-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
 }
 </style>

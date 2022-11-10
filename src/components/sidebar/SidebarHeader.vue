@@ -1,5 +1,12 @@
 <template>
-    <el-header>Neo Template</el-header>
+    <el-header class="sidebar-header">
+        Neo Template
+    </el-header>
 </template>
 
-<script></script>
+<style scoped>
+.sidebar-header {
+    display: flex;
+    align-items: center;
+}
+</style>
