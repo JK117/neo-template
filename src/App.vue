@@ -3,13 +3,17 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import MainSidebar from './components/MainSidebar.vue'
 import MainContentFrame from './components/MainContentFrame.vue'
+import TestMainFrame from './components/test/MainFrame.vue'
+import TestFlexFrame from './components/test/FlexFrame.vue'
 </script>
 
 <template>
-  <el-container class="root-container">
+  <!-- <el-container class="root-container">
     <MainSidebar />
     <MainContentFrame />
-  </el-container>
+  </el-container> -->
+  <TestMainFrame />
+  <!-- <TestFlexFrame /> -->
 </template>
 
 <style scoped>

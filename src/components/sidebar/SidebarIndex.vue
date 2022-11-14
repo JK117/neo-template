@@ -3,7 +3,7 @@
 </template>
 
 <style>
-.sidebar-index {
-    /* height: 100%; */
-}
+/* .sidebar-index {
+    height: 100%;
+} */
 </style>
