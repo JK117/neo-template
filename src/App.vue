@@ -12,8 +12,8 @@ import TestFlexFrame from './components/test/FlexFrame.vue'
     <MainSidebar />
     <MainContentFrame />
   </el-container> -->
-  <TestMainFrame />
-  <!-- <TestFlexFrame /> -->
+  <!-- <TestMainFrame /> -->
+  <TestFlexFrame />
 </template>
 
 <style scoped>
