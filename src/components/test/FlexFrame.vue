@@ -3,16 +3,36 @@
         <el-col class="nav-col" :span="nav_bar_expanded?4:1">
             <el-header class="nav-header">
                 Neo Template
-                <el-button plain circle dark @click="nav_bar_expanded = !nav_bar_expanded">
-
+                <!-- <el-button circle text :bg="false" @click="nav_bar_expanded = !nav_bar_expanded">
                     <el-icon>
                         <ArrowLeftBold v-if="nav_bar_expanded" />
                         <ArrowRightBold v-else />
                     </el-icon>
-                </el-button>
+                </el-button> -->
+                <el-button 
+                    circle
+                    :icon="nav_bar_expanded?'ArrowLeftBold':'ArrowRightBold'"
+                    @click="nav_bar_expanded = !nav_bar_expanded"
+                />
             </el-header>
-            <el-main>
+            <el-main class="nav-main">
                 Main
+                <el-button>默认按钮</el-button>
+                <el-button size="medium">中等按钮</el-button>
+                <el-button type="primary">主要按钮</el-button>
+                <el-button type="text">文字按钮</el-button>
+                <el-button type="primary" plain>主要按钮</el-button>
+                <el-button round>主要按钮</el-button>
+                <el-button icon="el-icon-search" circle></el-button>
+                <el-button disabled>禁用按钮</el-button>
+                <el-button type="primary" icon="Edit">图标按钮</el-button>
+                <el-button type="primary">
+                    图标按钮
+                    <el-icon>
+                        <Edit />
+                    </el-icon>
+                </el-button>
+                <el-button type="primary" :loading="true">加载中</el-button>
             </el-main>
         </el-col>
         <el-col class="content-col" :span="nav_bar_expanded?20:23"></el-col>
@@ -40,6 +60,10 @@ let nav_bar_expanded = ref(true)
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+.nav-main {
+    display: flex;
+    flex-direction: column;
 }
 .content-col {
     border-left: 0.5px solid aqua;
