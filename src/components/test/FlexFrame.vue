@@ -2,6 +2,7 @@
     <el-row class="row-container">
         <el-col class="nav-col" :span="nav_bar_expanded?4:1">
             <el-header class="nav-header">
+                <el-icon><House /></el-icon>
                 Neo Template
                 <!-- <el-button circle text :bg="false" @click="nav_bar_expanded = !nav_bar_expanded">
                     <el-icon>
@@ -17,7 +18,7 @@
             </el-header>
             <el-main class="nav-main">
                 Main
-                <el-button>默认按钮</el-button>
+                <!-- <el-button>默认按钮</el-button>
                 <el-button size="medium">中等按钮</el-button>
                 <el-button type="primary">主要按钮</el-button>
                 <el-button type="text">文字按钮</el-button>
@@ -32,7 +33,7 @@
                         <Edit />
                     </el-icon>
                 </el-button>
-                <el-button type="primary" :loading="true">加载中</el-button>
+                <el-button type="primary" :loading="true">加载中</el-button> -->
             </el-main>
         </el-col>
         <el-col class="content-col" :span="nav_bar_expanded?20:23"></el-col>
