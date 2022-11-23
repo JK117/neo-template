@@ -2,19 +2,30 @@
     <el-row class="row-container">
         <el-col class="nav-col" :span="nav_bar_expanded?4:1">
             <el-header class="nav-header">
-                <el-icon><House /></el-icon>
-                Neo Template
+                <el-button class="menu-expand-btn" @click="nav_bar_expanded = !nav_bar_expanded">
+                    <el-icon>
+                        <CloseBold v-if="nav_bar_expanded" />
+                        <Menu v-else />
+                    </el-icon>
+                </el-button>
+                <span v-if="nav_bar_expanded">
+                    Neo Template
+                </span>
+                <!-- Neo Template -->
                 <!-- <el-button circle text :bg="false" @click="nav_bar_expanded = !nav_bar_expanded">
                     <el-icon>
                         <ArrowLeftBold v-if="nav_bar_expanded" />
                         <ArrowRightBold v-else />
                     </el-icon>
                 </el-button> -->
-                <el-button 
+                <!-- <el-button 
                     circle
+                    class="expand-btn"
+                    size="small"
+                    color="green"
                     :icon="nav_bar_expanded?'ArrowLeftBold':'ArrowRightBold'"
                     @click="nav_bar_expanded = !nav_bar_expanded"
-                />
+                /> -->
             </el-header>
             <el-main class="nav-main">
                 Main
@@ -36,11 +47,14 @@
                 <el-button type="primary" :loading="true">加载中</el-button> -->
             </el-main>
         </el-col>
-        <el-col class="content-col" :span="nav_bar_expanded?20:23"></el-col>
+        <el-col class="content-col" :span="nav_bar_expanded?20:23">
+            <ToggleMenu />
+        </el-col>
     </el-row>
 </template>
 
 <script setup lang="ts">
+import ToggleMenu from './ToggleMenu.vue'
 import { ref } from 'vue'
 let nav_bar_expanded = ref(true)
 // const handleExpand = () => {
@@ -61,6 +75,11 @@ let nav_bar_expanded = ref(true)
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+.menu-expand-btn {
+    background: none;
+    /* padding: 0; */
+    border: none;
 }
 .nav-main {
     display: flex;
