@@ -1,16 +1,22 @@
 <script setup lang="ts">
-const menuToggle:HTMLAreaElement|null = document.querySelector('.menuToggle')
-const navigation:HTMLAreaElement|null = document.querySelector('.navigation')
+// import { ref } from 'vue'
+
 // menuToggle.onclick = function () {
 //     navigation?.classList.toggle('open')
 // }
-menuToggle?.addEventListener('click', () => {
+// menuToggle?.addEventListener('click', () => {
+//     console.log('Clicked')
+//     navigation?.classList.toggle('open')
+// })
+function toggleMenu() {
+    const menuToggle = document.querySelector('.menuToggle')
+    const navigation = document.querySelector('.navigation')
     navigation?.classList.toggle('open')
-})
+}
 </script>
 
 <template>
-    <div class="navigation">
+    <div class="navigation" @click="toggleMenu">
         <div class="menuToggle">
         </div>
     </div>
@@ -18,19 +24,19 @@ menuToggle?.addEventListener('click', () => {
 
 <style scoped>
 .navigation {
-    /* position: absolute;
-    inset: 20px 0 20px 20px; */
+    position: relative;
+    /* inset: 20px 0 20px 20px; */
     width: 75px;
     height: 80%;
     margin: 2rem;
     background: #fff;
-    transition: 0.5s;
+    transition: 0.25s;
 }
 .navigation.open {
     width: 250px;
 }
 .navigation .menuToggle {
-    /* position: absolute; */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -39,26 +45,32 @@ menuToggle?.addEventListener('click', () => {
     cursor: pointer;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    padding: 0 23px;
+    justify-content: center;
+    /* padding: 0 23px; */
 }
 .navigation .menuToggle::before {
     content: '';
-    /* position: absolute; */
+    position: absolute;
     width: 30px;
     height: 2px;
     background: #333;
     transform: translateY(-8px);
     transition: 0.5s;
 }
-.navigation .menuToggle::before {
+.navigation.open .menuToggle::before {
+    transform: translateY(0px) rotate(45deg);
+}
+.navigation .menuToggle::after {
     content: '';
-    /* position: absolute; */
+    position: absolute;
     width: 30px;
     height: 2px;
     background: #333;
     transform: translateY(8px);
     transition: 0.5s;
-    box-shadow: 0 -8px 0 #333;
+    /* box-shadow: 0 -8px 0 #333; */
+}
+.navigation.open .menuToggle::after {
+    transform: translateY(0px) rotate(-45deg);
 }
 </style>
