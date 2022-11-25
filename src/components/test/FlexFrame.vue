@@ -14,8 +14,9 @@
                 Neo Template
             </el-header>
             <el-main class="nav-main">
-                <span>Toggle Flex Menu</span>
-                <span>Test</span>
+                <span>Flexible Menu</span>
+                <span>Image Flow</span>
+                <span>3D</span>
             </el-main>
         </el-col>
         <el-col class="content-col" :span="nav_bar_expanded?20:23">
