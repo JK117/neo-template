@@ -9,27 +9,14 @@ const activatedOption = ref(0)
 //     {name: 'Settings',icon: 'Setting',  color: '#'},
 // ])
 
-// menuToggle.onclick = function () {
-//     navigation?.classList.toggle('open')
-// }
-// menuToggle?.addEventListener('click', () => {
-//     console.log('Clicked')
-//     navigation?.classList.toggle('open')
-// })
 function toggleMenu() {
     const menuToggle = document.querySelector('.menuToggle')
     const navigation = document.querySelector('.navigation')
     navigation?.classList.toggle('open')
 }
 function activateOption(i:number) {
-    console.log(i)
+    activatedOption.value = i
 }
-// function activateOption() {
-//     const list = document.querySelectorAll('.list')
-//     list.forEach((item) => {
-//         item.classList.remove('active')
-//     })
-// }
 </script>
 
 <template>
@@ -37,8 +24,7 @@ function activateOption(i:number) {
         <div class="menuToggle" @click="toggleMenu">
         </div>
         <ul>
-            <!-- <li :class="'list' activatedOption===0?'active':''" style="--clr:#f44336;" @click="activateOption(0)"> -->
-            <li class="list active" style="--clr:#f44336;">
+            <li :class="['list', activatedOption===0?'active':'']" style="--clr:#f44336;" @click="activateOption(0)">
                 <a href="#">
                     <span class="icon">
                         <el-icon><House /></el-icon>
@@ -46,8 +32,7 @@ function activateOption(i:number) {
                     <span class="text">Home</span>
                 </a>
             </li>
-            <!-- <li :class="'list' activatedOption===1?'active':''" style="--clr:#ffa117;" @click="activateOption(1)"> -->
-            <li class="list active" style="--clr:#ffa117;">
+            <li :class="['list', activatedOption===1?'active':'']" style="--clr:#ffa117;" @click="activateOption(1)">
                 <a href="#">
                     <span class="icon">
                         <el-icon><User /></el-icon>
@@ -55,7 +40,7 @@ function activateOption(i:number) {
                     <span class="text">About</span>
                 </a>
             </li>
-            <li class="list" style="--clr:#0fc70f;">
+            <li :class="['list', activatedOption===2?'active':'']" style="--clr:#0fc70f;" @click="activateOption(2)">
                 <a href="#">
                     <span class="icon">
                         <el-icon><Message /></el-icon>
@@ -63,7 +48,7 @@ function activateOption(i:number) {
                     <span class="text">Message</span>
                 </a>
             </li>
-            <li class="list" style="--clr:#2196f3;">
+            <li :class="['list', activatedOption===3?'active':'']" style="--clr:#2196f3;" @click="activateOption(3)">
                 <a href="#">
                     <span class="icon">
                         <el-icon><Picture /></el-icon>
@@ -71,7 +56,7 @@ function activateOption(i:number) {
                     <span class="text">Photos</span>
                 </a>
             </li>
-            <li class="list" style="--clr:#b145e9;">
+            <li :class="['list', activatedOption===4?'active':'']" style="--clr:#b145e9;" @click="activateOption(4)">
                 <a href="#">
                     <span class="icon">
                         <el-icon><Setting /></el-icon>
