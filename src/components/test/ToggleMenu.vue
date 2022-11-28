@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 const activatedOption = ref(0)
-// const menuOptions = ref([
-//     {name: 'Home',icon: 'House', color: '#'},
-//     {name: 'About',icon: 'User',  color: '#'},
-//     {name: 'Messages',icon: 'Message',  color: '#'},
-//     {name: 'Photos',icon: 'Picture',  color: '#'},
-//     {name: 'Settings',icon: 'Setting',  color: '#'},
-// ])
+const menuOptions = ref([
+    {name: 'Home',icon: 'House', color: '#f44336'},
+    {name: 'About',icon: 'User',  color: '#ffa117'},
+    {name: 'Messages',icon: 'Message',  color: '#0fc70f'},
+    {name: 'Photos',icon: 'Picture',  color: '#2196f3'},
+    {name: 'Settings',icon: 'Setting',  color: '#b145e9'},
+])
 
 function toggleMenu() {
     const menuToggle = document.querySelector('.menuToggle')
@@ -24,6 +24,20 @@ function activateOption(i:number) {
         <div class="menuToggle" @click="toggleMenu">
         </div>
         <ul>
+            <!-- <li
+                v-for="(option,i) in menuOptions"
+                :key="i"
+                :class="['list', activatedOption===i?'active':'']"
+                style="--clr:option.color"
+                @click="activateOption(i)"
+            >
+                <a href="#">
+                    <span class="icon">
+                        <el-icon><House /></el-icon>
+                    </span>
+                    <span class="text">{{option.name}}</span>
+                </a>
+            </li> -->
             <li :class="['list', activatedOption===0?'active':'']" style="--clr:#f44336;" @click="activateOption(0)">
                 <a href="#">
                     <span class="icon">
@@ -72,7 +86,7 @@ function activateOption(i:number) {
 .navigation {
     position: relative;
     /* inset: 20px 0 20px 20px; */
-    width: 61px;
+    width: 60px;
     height: 80%;
     margin: 2rem;
     background: #fff;
@@ -85,14 +99,13 @@ function activateOption(i:number) {
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
+        width: calc(100% - 2rem);
         height: 60px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.25);
         cursor: pointer;
         display: flex;
         align-items: center;
-        /* justify-content: center; */
-        padding: 0 1rem 0 1rem;
+        padding: 0 1rem;
         &::before {
             content: '';
             position: absolute;
@@ -115,7 +128,7 @@ function activateOption(i:number) {
     }
 
     &.open {
-        width: 250px;
+        width: 200px;
         .menuToggle {
             &::before {
                 transform: translateY(0px) rotate(45deg);
@@ -138,15 +151,15 @@ function activateOption(i:number) {
     ul {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 2rem;
         width: 100%;
         padding-left: 0;
         li {
             list-style: none;
             position: relative;
-            width: 100%;
-            height: 60px;
-            padding: 0 1rem;
+            width: calc(100% - 2rem);
+            height: calc(100% - 2rem);
+            padding: 0 0.5rem;
             transition: 0.25s;
             a {
                 position: relative;
@@ -159,12 +172,12 @@ function activateOption(i:number) {
                 .icon {
                     position: relative;
                     display: block;
-                    min-width: 55px;
-                    height: 55px;
-                    line-height: 60px;
+                    min-width: calc(60px - 1rem);
+                    height: calc(60px - 1rem);
+                    line-height: 52px;
                     transition: 0.25s;
                     color: #222;
-                    border-radius: 10px;
+                    border-radius: 8px;
                     &::before {
                         content: '';
                         position: absolute;
@@ -173,15 +186,15 @@ function activateOption(i:number) {
                         width: 100%;
                         height: 100%;
                         background: var(--clr);
-                        filter: blur(7px);
+                        filter: blur(4px);
                         opacity: 0;
                         transition: 0.25s;
                     }
                 }
                 .text {
                     position: relative;
-                    padding: 0 15px;
-                    height: 60px;
+                    padding: 0 1rem;
+                    height: calc(60px - 1rem);
                     display: flex;
                     align-items: center;
                     color: #333;
@@ -206,16 +219,6 @@ function activateOption(i:number) {
             }
         }
     }
-
-    // .menuToggle::before {
-    //     content: '';
-    //     position: absolute;
-    //     width: 30px;
-    //     height: 3px;
-    //     background: rgba(50, 50, 50, 0.5);
-    //     transform: translateY(-8px);
-    //     transition: 0.25s;
-    // }
 }
 // .navigation.open {
 //     width: 250px;
