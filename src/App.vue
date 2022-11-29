@@ -8,16 +8,27 @@ import TestFlexFrame from './components/test/FlexFrame.vue'
 </script>
 
 <template>
-  <!-- <el-container class="root-container">
+  <el-container class="root-container">
     <MainSidebar />
     <MainContentFrame />
-  </el-container> -->
-  <TestFlexFrame />
+  </el-container>
+
+  <!-- <TestFlexFrame /> -->
+
+  <!-- <div class="main-frame-box">
+    <el-page-header></el-page-header>
+  </div> -->
+
   <!-- <MainFrame /> -->
 </template>
 
 <style scoped>
 .root-container {
   height: 100vh;
+}
+.main-frame-box {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
 }
 </style>
