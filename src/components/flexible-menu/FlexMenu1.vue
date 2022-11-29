@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-const activatedOption = ref(0)
-const menuOptions = ref([
+const activated_option = ref(0)
+const menu_options = ref([
     {name: 'Home',icon: 'House', color: '#f44336'},
     {name: 'About',icon: 'User',  color: '#ffa117'},
     {name: 'Messages',icon: 'Message',  color: '#0fc70f'},
@@ -10,72 +10,31 @@ const menuOptions = ref([
 ])
 
 function toggleMenu() {
-    const menuToggle = document.querySelector('.menuToggle')
-    const navigation = document.querySelector('.navigation')
-    navigation?.classList.toggle('open')
+    const menu_box = document.querySelector('.menu-box')
+    menu_box?.classList.toggle('open')
 }
 function activateOption(i:number) {
-    activatedOption.value = i
+    activated_option.value = i
 }
 </script>
 
 <template>
-    <div class="navigation">
-        <div class="menuToggle" @click="toggleMenu">
+    <div class="menu-box">
+        <div class="menu-toggle-box" @click="toggleMenu">
         </div>
         <ul>
-            <!-- <li
-                v-for="(option,i) in menuOptions"
+            <li
+                v-for="(option,i) in menu_options"
                 :key="i"
-                :class="['list', activatedOption===i?'active':'']"
-                style="--clr:option.color"
+                :class="['list', activated_option===i?'active':'']"
+                :style="{'--clr':option.color}"
                 @click="activateOption(i)"
             >
                 <a href="#">
                     <span class="icon">
-                        <el-icon><House /></el-icon>
+                        <el-icon><component :is="option.icon" /></el-icon>
                     </span>
                     <span class="text">{{option.name}}</span>
-                </a>
-            </li> -->
-            <li :class="['list', activatedOption===0?'active':'']" style="--clr:#f44336;" @click="activateOption(0)">
-                <a href="#">
-                    <span class="icon">
-                        <el-icon><House /></el-icon>
-                    </span>
-                    <span class="text">Home</span>
-                </a>
-            </li>
-            <li :class="['list', activatedOption===1?'active':'']" style="--clr:#ffa117;" @click="activateOption(1)">
-                <a href="#">
-                    <span class="icon">
-                        <el-icon><User /></el-icon>
-                    </span>
-                    <span class="text">About</span>
-                </a>
-            </li>
-            <li :class="['list', activatedOption===2?'active':'']" style="--clr:#0fc70f;" @click="activateOption(2)">
-                <a href="#">
-                    <span class="icon">
-                        <el-icon><Message /></el-icon>
-                    </span>
-                    <span class="text">Message</span>
-                </a>
-            </li>
-            <li :class="['list', activatedOption===3?'active':'']" style="--clr:#2196f3;" @click="activateOption(3)">
-                <a href="#">
-                    <span class="icon">
-                        <el-icon><Picture /></el-icon>
-                    </span>
-                    <span class="text">Photos</span>
-                </a>
-            </li>
-            <li :class="['list', activatedOption===4?'active':'']" style="--clr:#b145e9;" @click="activateOption(4)">
-                <a href="#">
-                    <span class="icon">
-                        <el-icon><Setting /></el-icon>
-                    </span>
-                    <span class="text">Settings</span>
                 </a>
             </li>
         </ul>
@@ -83,7 +42,7 @@ function activateOption(i:number) {
 </template>
 
 <style lang="scss" scoped>
-.navigation {
+.menu-box {
     position: relative;
     /* inset: 20px 0 20px 20px; */
     width: 60px;
@@ -95,7 +54,7 @@ function activateOption(i:number) {
     justify-content: center;
     align-items: center;
 
-    .menuToggle {
+    .menu-toggle-box {
         position: absolute;
         top: 0;
         left: 0;
@@ -129,7 +88,7 @@ function activateOption(i:number) {
 
     &.open {
         width: 200px;
-        .menuToggle {
+        .menu-toggle-box {
             &::before {
                 transform: translateY(0px) rotate(45deg);
                 height: 2px;
@@ -220,6 +179,10 @@ function activateOption(i:number) {
         }
     }
 }
+// Step 1: basic stylings
+// Step 2: pseudo classes
+// Step 3: dynamic effects
+
 // .navigation.open {
 //     width: 250px;
 // }

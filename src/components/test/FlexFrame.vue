@@ -1,3 +1,13 @@
+<script setup lang="ts">
+import FlexMenu1 from '../flexible-menu/FlexMenu1.vue'
+import { ref } from 'vue'
+let nav_bar_expanded = ref(true)
+// const handleExpand = () => {
+//     nav_bar_expanded = !nav_bar_expanded
+// }
+</script>
+
+
 <template>
     <el-row class="row-container">
         <el-col class="nav-col" :span="nav_bar_expanded?4:1">
@@ -20,19 +30,11 @@
             </el-main>
         </el-col>
         <el-col class="content-col" :span="nav_bar_expanded?20:23">
-            <ToggleMenu />
+            <FlexMenu1 />
         </el-col>
     </el-row>
 </template>
 
-<script setup lang="ts">
-import ToggleMenu from './ToggleMenu.vue'
-import { ref } from 'vue'
-let nav_bar_expanded = ref(true)
-// const handleExpand = () => {
-//     nav_bar_expanded = !nav_bar_expanded
-// }
-</script>
 
 <style scoped>
 .row-container {
