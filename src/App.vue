@@ -1,9 +1,9 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
+import MainFrame from './components/MainFrame.vue'
 import MainSidebar from './components/MainSidebar.vue'
 import MainContentFrame from './components/MainContentFrame.vue'
-import TestMainFrame from './components/test/MainFrame.vue'
 import TestFlexFrame from './components/test/FlexFrame.vue'
 </script>
 
@@ -12,8 +12,8 @@ import TestFlexFrame from './components/test/FlexFrame.vue'
     <MainSidebar />
     <MainContentFrame />
   </el-container> -->
-  <!-- <TestMainFrame /> -->
   <TestFlexFrame />
+  <!-- <MainFrame /> -->
 </template>
 
 <style scoped>
