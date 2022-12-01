@@ -12,6 +12,13 @@ export default defineConfig({
     }
   },
   plugins: [vue()],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import "./src/styles/variables.module.scss";`
+      },
+    }
+  },
   server: {
     port: 8080,
     open: true,
