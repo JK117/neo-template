@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import NavOptions from 'components/navigation/NavOptions.vue'
+import SidebarMenu from 'components/navigation/SidebarMenu.vue'
 // import SidebarFooter from 'components/navigation/SidebarFooter.vue'
 </script>
 
 
 <template>
     <div class="sidebar-box">
-        <NavOptions />
+        <SidebarMenu />
         <!-- <SidebarFooter /> -->
     </div>
 </template>
