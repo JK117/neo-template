@@ -1,34 +1,33 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import MainFrame from './components/MainFrame.vue'
-import MainSidebar from './components/MainSidebar.vue'
-import MainContentFrame from './components/MainContentFrame.vue'
-import TestFlexFrame from './components/test/FlexFrame.vue'
+import Sidebar from 'components/navigation/Sidebar.vue'
+import MainSidebar from 'src/components/MainSidebar.vue'
+import TestFlexFrame from 'src/components/test/FlexFrame.vue'
 </script>
 
 <template>
-  <el-container class="root-container">
-    <MainSidebar />
-    <MainContentFrame />
-  </el-container>
-
   <!-- <TestFlexFrame /> -->
+  <el-container>
+    <el-header class="border-marker" style="padding: 0;">
+      <div class="bg-marker">
+        <h1>Neo Template</h1>
+      </div>
+    </el-header>
 
-  <!-- <div class="main-frame-box">
-    <el-page-header></el-page-header>
-  </div> -->
-
-  <!-- <MainFrame /> -->
+    <el-container>
+      <el-asider class="border-marker">
+        <Sidebar />
+      </el-asider>
+      <el-main class="border-marker">
+        <div class="bg-marker">Main</div>
+      </el-main>
+    </el-container>
+  </el-container>
 </template>
 
-<style scoped>
-.root-container {
-  height: 100vh;
-}
-.main-frame-box {
-  display: flex;
-  min-height: 100vh;
-  width: 100vw;
-}
+<style lang="scss">
+// .container-box {
+//   border: 0.5px dashed rgba(200, 194, 112, 0.5);
+// }
 </style>

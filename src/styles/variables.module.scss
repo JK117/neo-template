@@ -26,9 +26,11 @@ body {
     width: 100%;
 }
 
+$marker-clr: rgba(55, 210, 250, 0.5);
+
 .bg-marker {
-    background-color: rgba(200, 194, 112, 0.5);
+    background-color: $marker-clr;
 }
 .border-marker {
-    border: 0.5px dashed rgba(200, 194, 112, 0.5);
+    border: 0.5px dashed $marker-clr;
 }
