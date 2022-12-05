@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import SidebarMenu from 'components/navigation/SidebarMenu.vue'
-// import SidebarFooter from 'components/navigation/SidebarFooter.vue'
+import SidebarMenu from '@/components/navigation/SidebarMenu.vue'
+// import SidebarFooter from '@/components/navigation/SidebarFooter.vue'
 </script>
 
 

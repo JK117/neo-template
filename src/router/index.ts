@@ -9,11 +9,11 @@ const router = createRouter({
         },
         {
             path: '/menu',
-            component: () => import('components/views/FlexMenu.vue'),
+            component: () => import('@/components/views/FlexMenu.vue'),
         },
         {
             path: '/flow',
-            component: () => import('components/views/CardFlow.vue'),
+            component: () => import('@/components/views/CardFlow.vue'),
         },
     ],
 })
