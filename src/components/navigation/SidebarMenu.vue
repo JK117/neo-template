@@ -1,14 +1,16 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+const router = useRouter()
 const menu_options = ref([
     {name: 'Flex Menu', route: 'menu', color: '#f44336'},
     {name: 'Image Flow', route: 'flow', color: '#ffa117'},
-    // {name: '3D Demo', color: '#0fc70f'},
+    // {name: '3D Demo', route: '3d', color: '#0fc70f'},
+    // {name: 'AntV G6', route: '', color: '#2196f3'},
+    // {name: '', route: '', color: '#b145e9'},
     // {name: '', route: '', color: '#'},
 ])
 const handleRouterClick = (route: string) => {
-    const router = useRouter()
     router.push(`/${route}`)
 }
 </script>
