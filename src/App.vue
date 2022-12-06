@@ -1,25 +1,22 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
+import Headbar from '@/components/navigation/Headbar.vue'
 import Sidebar from '@/components/navigation/Sidebar.vue'
-import TestFlexFrame from '@/components/test/FlexFrame.vue'
 </script>
 
 <template>
-  <!-- <TestFlexFrame /> -->
   <el-container>
-    <el-header class="border-marker">
-      <div class="bg-marker">
-        <h1>Neo Template</h1>
-      </div>
+    <el-header class="headbar-box border-marker">
+      <Headbar />
     </el-header>
 
     <el-container>
       <el-asider class="border-marker">
         <Sidebar />
       </el-asider>
+
       <el-main class="border-marker">
-        <!-- <div class="bg-marker">Main</div> -->
         <router-view />
       </el-main>
     </el-container>
@@ -27,7 +24,9 @@ import TestFlexFrame from '@/components/test/FlexFrame.vue'
 </template>
 
 <style lang="scss">
-// .container-box {
-//   border: 0.5px dashed rgba(200, 194, 112, 0.5);
-// }
+.headbar-box {
+  position: sticky;
+  top: 0px;
+  z-index: 20;
+}
 </style>
