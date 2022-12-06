@@ -44,11 +44,13 @@ function activateOption(i:number) {
 <style lang="scss" scoped>
 .menu-box {
     position: relative;
-    /* inset: 20px 0 20px 20px; */
+    // inset: 20px 0 20px 20px;
     width: 60px;
-    height: 80%;
+    // height: calc(100% - 4rem);
+    height: 500px;
     margin: 2rem;
-    background: #fff;
+    background-color: #CDD0D6;
+    border-radius: 8px;
     transition: 0.25s;
     display: flex;
     justify-content: center;
@@ -156,7 +158,7 @@ function activateOption(i:number) {
                     height: calc(60px - 1rem);
                     display: flex;
                     align-items: center;
-                    color: #333;
+                    color: white;
                     opacity: 0;
                     visibility: hidden;
                     transition: 0.25s;
