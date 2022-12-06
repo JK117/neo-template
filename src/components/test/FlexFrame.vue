@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import FlexMenu1 from '../flexible-menu/FlexMenu1.vue'
+import FlexMenu1 from '@/components/flexible-menu/FlexMenu1.vue'
 import { ref } from 'vue'
 let nav_bar_expanded = ref(true)
 // const handleExpand = () => {
