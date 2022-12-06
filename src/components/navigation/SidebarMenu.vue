@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { useRouter } from 'vue-router';
-const router = useRouter()
+// Approach 1: apply router object
+// import { useRouter } from 'vue-router';
+// const router = useRouter()
+// const handleRouterClick = (route: string) => {
+//     router.push(`/${route}`)
+// }
 const menu_options = ref([
     {name: 'Flex Menu', route: 'menu', color: '#f44336'},
     {name: 'Image Flow', route: 'flow', color: '#ffa117'},
@@ -10,20 +14,19 @@ const menu_options = ref([
     // {name: '', route: '', color: '#b145e9'},
     // {name: '', route: '', color: '#'},
 ])
-const handleRouterClick = (route: string) => {
-    router.push(`/${route}`)
-}
+
 </script>
 
 
 <template>
-    <el-menu>
+    <!-- Approach 2: use el-menu router api -->
+    <el-menu class="sidebar-menu-box" router :default-active="menu_options[0].route">
         <el-menu-item
             v-for="(option, key) in menu_options"
             :key="key"
-            :index="key"
-            @click="handleRouterClick(option.route)"
+            :index="option.route"
         >
+            <!-- @click="handleRouterClick(option.route)" -->
             {{ option.name }}
         </el-menu-item>
     </el-menu>
@@ -31,4 +34,7 @@ const handleRouterClick = (route: string) => {
 
 
 <style scoped lang="scss">
+.sidebar-menu-box {
+    border: none;
+}
 </style>
