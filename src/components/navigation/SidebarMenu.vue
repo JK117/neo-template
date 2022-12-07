@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, getCurrentInstance } from 'vue';
+// import useGetGlobalProperties from '@/hooks/useGlobal'
 // Approach 1: apply router object
 // import { useRouter } from 'vue-router';
 // const router = useRouter()
@@ -14,7 +15,8 @@ const menu_options = ref([
     // {name: '', route: '', color: '#b145e9'},
     // {name: '', route: '', color: '#'},
 ])
-
+// const { proxy } = getCurrentInstance()!
+// const options = ref(proxy?.$menu_options)
 </script>
 
 
@@ -26,6 +28,7 @@ const menu_options = ref([
             :key="key"
             :index="option.route"
         >
+            <!-- Approach 1 -->
             <!-- @click="handleRouterClick(option.route)" -->
             {{ option.name }}
         </el-menu-item>
