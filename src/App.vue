@@ -11,7 +11,7 @@ import Sidebar from '@/components/navigation/Sidebar.vue'
       <Headbar />
     </el-header>
 
-    <el-container>
+    <el-container class="container-box">
       <el-asider class="border-marker">
         <Sidebar />
       </el-asider>
@@ -27,6 +27,9 @@ import Sidebar from '@/components/navigation/Sidebar.vue'
 .headbar-box {
   position: sticky;
   top: 0px;
-  z-index: 20;
+  z-index: 1;
+}
+.container-box {
+  z-index: 0;
 }
 </style>
