@@ -4,12 +4,16 @@ import ThemeSwitch from '@/components/navigation/ThemeSwitch.vue'
 
 
 <template>
-    <div class="headbar-box">
+    <div class="headbar-inner-box">
         <!-- Trade Mark -->
+
         <!-- Title -->
         <h1>Neo Template</h1>
+
         <!-- Spacer -->
+        
         <!-- i18n Switch -->
+
         <!-- Theme switch -->
         <ThemeSwitch />
     </div>
@@ -17,7 +21,7 @@ import ThemeSwitch from '@/components/navigation/ThemeSwitch.vue'
 
 
 <style lang="scss" scoped>
-.headbar-box {
+.headbar-inner-box {
     display: flex;
     justify-content: space-between;
     align-items: center;
