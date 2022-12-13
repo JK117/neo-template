@@ -1,4 +1,5 @@
-@use "element-plus/theme-chalk/src/dark/css-vars.scss" as *;
+// @use "element-plus/theme-chalk/src/dark/css-vars.scss" as *;
+@forward "element-plus/theme-chalk/src/dark/css-vars.scss";
 
 html.dark {
     background-color: #282C34;
