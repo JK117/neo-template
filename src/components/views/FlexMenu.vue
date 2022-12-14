@@ -1,18 +1,15 @@
 <script setup lang="ts">
+import MainContentFrame from '@/components/views/MainContentFrame.vue'
 import FlexMenu1 from '@/components/flexible-menu/FlexMenu1.vue'
 </script>
 
 
 <template>
-    <div class="flex-menu-box border-marker">
+    <MainContentFrame>
         <FlexMenu1 />
-    </div>
+    </MainContentFrame>
 </template>
 
-<style lang="scss" scoped>
-.flex-menu-box {
-    display: flex;
-    // height: calc(100% - 1px);
-    height: 1600px;
-}
+<style scoped lang="scss">
+//
 </style>

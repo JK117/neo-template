@@ -6,17 +6,17 @@ import Sidebar from '@/components/navigation/Sidebar.vue'
 </script>
 
 <template>
-  <el-container>
+  <el-container class="root-box">
     <el-header class="headbar-box border-marker">
       <Headbar />
     </el-header>
 
     <el-container class="container-box">
-      <el-asider class="border-marker">
+      <el-asider class="asider-box border-marker">
         <Sidebar />
       </el-asider>
 
-      <el-main class="border-marker">
+      <el-main class="main-box border-marker">
         <router-view />
       </el-main>
     </el-container>
@@ -24,12 +24,14 @@ import Sidebar from '@/components/navigation/Sidebar.vue'
 </template>
 
 <style lang="scss">
-.headbar-box {
-  position: sticky;
-  top: 0px;
-  z-index: 1;
-}
+// .headbar-box {
+//   position: sticky;
+//   top: 0px;
+//   z-index: 1;
+// }
 .container-box {
-  z-index: 0;
+  // z-index: 0;
+  height: calc(100vh - 60px);
+  // .main-box {}
 }
 </style>
