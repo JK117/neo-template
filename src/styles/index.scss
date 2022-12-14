@@ -3,6 +3,28 @@
 @use "./element/index.scss" as *;
 @use "./test/marker.scss" as marker;
 
+$bg-color: #ecedf4;
+$bg-color-dark: #282C34;
+
+html.dark {
+    // background-color: $bg-color-dark;
+    .headbar-box {
+        background-color: $bg-color-dark;
+    }
+    .container-box {
+        background-color: $bg-color-dark;
+    }
+}
+html {
+    // background-color: $bg-color;
+    .headbar-box {
+        background-color: $bg-color;
+    }
+    .container-box {
+        background-color: $bg-color;
+    }
+}
+
 :root {
     font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
     font-size: 16px;
@@ -21,16 +43,14 @@
 body {
     margin: 0;
     min-width: 320px;
-    min-height: 100vh;
+    // min-height: 100vh;
 }
   
-#app {
+.root-box {
     display: flex;
     min-height: 100vh;
-    width: 100%;
+    width: 100vw;
 }
-
-// $marker-clr: rgba(55, 210, 250, 0.5);
 
 .bg-marker {
     background-color: marker.$bg-clr;
