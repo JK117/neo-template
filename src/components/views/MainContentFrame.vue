@@ -11,6 +11,6 @@
 <style lang="scss" scoped>
 .main-inner-box {
     display: flex;
-    height: calc(100% - 1px);
+    min-height: calc(100% - 1px);
 }
 </style>
