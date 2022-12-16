@@ -1,31 +1,37 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
+import Headbar from '@/components/navigation/Headbar.vue'
+import Sidebar from '@/components/navigation/Sidebar.vue'
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <el-container class="root-box">
+    <el-header class="headbar-box border-marker">
+      <Headbar />
+    </el-header>
+
+    <el-container class="container-box">
+      <el-asider class="asider-box border-marker">
+        <Sidebar />
+      </el-asider>
+
+      <el-main class="main-box border-marker">
+        <router-view />
+      </el-main>
+    </el-container>
+  </el-container>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+<style lang="scss">
+// .headbar-box {
+//   position: sticky;
+//   top: 0px;
+//   z-index: 1;
+// }
+.container-box {
+  // z-index: 0;
+  height: calc(100vh - 60px);
+  // .main-box {}
 }
 </style>
